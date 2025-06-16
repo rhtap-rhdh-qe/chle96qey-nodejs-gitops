@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: chle96qey-nodejs-gitops
+  description: This is GitOps manifest for chle96qey-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=chle96qey-nodejs
+    backstage.io/kubernetes-id: chle96qey-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: chle96qey-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:chle96qey-nodejs
